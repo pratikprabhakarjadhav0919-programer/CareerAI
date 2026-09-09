@@ -544,3 +544,123 @@ footer {
         padding: 25px 20px;
     }
 }
+
+/* Learning Roadmap */
+
+.learning-roadmap {
+    padding: 80px 8%;
+    background: #0f172a;
+    text-align: center;
+}
+
+.learning-roadmap h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.learning-roadmap > p {
+    color: #cbd5e1;
+    margin-bottom: 35px;
+}
+
+.roadmap-form {
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    gap: 15px;
+}
+
+.roadmap-form select {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.roadmap-form select:focus {
+    border-color: #60a5fa;
+}
+
+.roadmap-form button {
+    margin: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.roadmap-result {
+    max-width: 750px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 20px;
+    text-align: left;
+    display: none;
+}
+
+.roadmap-result h3 {
+    color: #60a5fa;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.roadmap-steps {
+    display: grid;
+    gap: 15px;
+}
+
+.roadmap-step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    background: #0f172a;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.roadmap-step span {
+    min-width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.roadmap-step strong {
+    color: #f8fafc;
+}
+
+.roadmap-message {
+    margin-top: 25px;
+    color: #cbd5e1;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+
+    .learning-roadmap {
+        padding: 60px 5%;
+    }
+
+    .learning-roadmap h2 {
+        font-size: 30px;
+    }
+
+    .roadmap-form {
+        flex-direction: column;
+    }
+
+    .roadmap-form button {
+        width: 100%;
+    }
+}
