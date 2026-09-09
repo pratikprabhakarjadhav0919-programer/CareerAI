@@ -370,3 +370,87 @@ footer {
         font-size: 30px;
     }
 }
+
+/* AI Career Advisor */
+
+.career-advisor {
+    padding: 80px 8%;
+    background: #0f172a;
+    text-align: center;
+}
+
+.career-advisor h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.career-advisor > p {
+    color: #cbd5e1;
+    margin-bottom: 35px;
+}
+
+.advisor-form {
+    max-width: 750px;
+    margin: auto;
+    display: grid;
+    gap: 18px;
+}
+
+.advisor-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.advisor-form input:focus {
+    border-color: #60a5fa;
+}
+
+.advisor-form button {
+    border: none;
+    cursor: pointer;
+    margin: 5px 0 0;
+}
+
+.career-result {
+    max-width: 750px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    text-align: left;
+    display: none;
+}
+
+.career-result h2 {
+    color: #60a5fa;
+    margin: 10px 0 25px;
+}
+
+.career-result h3 {
+    color: #60a5fa;
+    margin-top: 15px;
+}
+
+.career-result p {
+    color: #cbd5e1;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+
+    .career-advisor {
+        padding: 60px 5%;
+    }
+
+    .career-advisor h2 {
+        font-size: 30px;
+    }
+}
