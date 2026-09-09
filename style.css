@@ -201,3 +201,75 @@ footer {
         font-size: 30px;
     }
 }
+
+/* Resume Builder */
+
+.resume-builder {
+    padding: 80px 8%;
+    background: #0f172a;
+}
+
+.resume-builder h2 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.resume-form {
+    max-width: 750px;
+    margin: auto;
+    display: grid;
+    gap: 18px;
+}
+
+.resume-form input,
+.resume-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.resume-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus {
+    border-color: #60a5fa;
+}
+
+.resume-form button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.resume-output {
+    max-width: 750px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: white;
+    color: #111827;
+    border-radius: 15px;
+    display: none;
+}
+
+.resume-output h2 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.resume-output h3 {
+    margin-top: 20px;
+    color: #1e293b;
+}
+
+.resume-output p {
+    margin: 8px 0;
+}
