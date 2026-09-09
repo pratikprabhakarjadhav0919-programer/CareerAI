@@ -555,3 +555,103 @@ showQuestion();
     );
 
 });
+
+// =========================
+// PERSONALIZED LEARNING ROADMAP
+// =========================
+
+const roadmapButton =
+    document.getElementById("generateRoadmap");
+
+const roadmapResult =
+    document.getElementById("roadmapResult");
+
+if (roadmapButton && roadmapResult) {
+
+    roadmapButton.addEventListener("click", function () {
+
+        const career =
+            document.getElementById("roadmapCareer").value;
+
+        if (!career) {
+            alert("Please select a career path.");
+            return;
+        }
+
+        const roadmaps = {
+
+            web: [
+                "HTML & CSS",
+                "JavaScript",
+                "Git & GitHub",
+                "React.js",
+                "Node.js & Express",
+                "Database",
+                "Full Stack Projects"
+            ],
+
+            data: [
+                "Python Basics",
+                "SQL & Databases",
+                "Statistics",
+                "Pandas & NumPy",
+                "Data Visualization",
+                "Power BI / Tableau",
+                "Data Analysis Projects"
+            ],
+
+            android: [
+                "Java or Kotlin",
+                "Android Studio",
+                "UI Development",
+                "Activities & Navigation",
+                "APIs",
+                "Database",
+                "Android Projects"
+            ],
+
+            design: [
+                "Design Fundamentals",
+                "Figma",
+                "UI Design",
+                "UX Research",
+                "Wireframing",
+                "Prototyping",
+                "Design Portfolio"
+            ]
+        };
+
+        const steps = roadmaps[career];
+
+        roadmapResult.innerHTML = `
+            <h3>🗺️ Your Learning Roadmap</h3>
+
+            <div class="roadmap-steps">
+
+                ${steps.map(function (step, index) {
+
+                    return `
+                        <div class="roadmap-step">
+                            <span>${index + 1}</span>
+                            <strong>${step}</strong>
+                        </div>
+                    `;
+
+                }).join("")}
+
+            </div>
+
+            <p class="roadmap-message">
+                🚀 Complete each step and build projects
+                to become job-ready.
+            </p>
+        `;
+
+        roadmapResult.style.display = "block";
+
+        roadmapResult.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+}
