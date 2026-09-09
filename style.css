@@ -273,3 +273,100 @@ footer {
 .resume-output p {
     margin: 8px 0;
 }
+
+/* AI Skill Analysis */
+
+.skill-analysis {
+    padding: 80px 8%;
+    background: #111827;
+    text-align: center;
+}
+
+.skill-analysis h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.skill-analysis > p {
+    color: #cbd5e1;
+    margin-bottom: 35px;
+}
+
+.skill-form {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-form input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.skill-form input:focus {
+    border-color: #60a5fa;
+}
+
+.skill-form button {
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.skill-result {
+    max-width: 700px;
+    margin: 35px auto 0;
+    padding: 30px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    text-align: left;
+    display: none;
+}
+
+.skill-result h3 {
+    color: #60a5fa;
+    margin-bottom: 12px;
+}
+
+.skill-result p {
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.skill-result ul {
+    padding-left: 25px;
+    color: #f8fafc;
+}
+
+.skill-result li {
+    margin: 8px 0;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+
+    .skill-form {
+        flex-direction: column;
+    }
+
+    .skill-form button {
+        width: 100%;
+    }
+
+    .skill-analysis {
+        padding: 60px 5%;
+    }
+
+    .skill-analysis h2 {
+        font-size: 30px;
+    }
+}
