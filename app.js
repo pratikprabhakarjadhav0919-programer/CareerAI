@@ -393,6 +393,163 @@ if (careerButton && careerResult) {
     });
 }
 
+// =========================
+// AI INTERVIEW PREP
+// =========================
+
+const interviewQuestions = [
+    {
+        question: "What is HTML?",
+        keywords: ["markup", "web", "structure"]
+    },
+    {
+        question: "What is CSS?",
+        keywords: ["style", "design", "web"]
+    },
+    {
+        question: "What is JavaScript?",
+        keywords: ["programming", "script", "web"]
+    },
+    {
+        question: "What is a database?",
+        keywords: ["data", "store", "information"]
+    },
+    {
+        question: "What is GitHub?",
+        keywords: ["code", "repository", "git"]
+    }
+];
+
+let currentQuestion = 0;
+let interviewScore = 0;
+
+const questionElement =
+    document.getElementById("question");
+
+const answerElement =
+    document.getElementById("answer");
+
+const checkAnswerButton =
+    document.getElementById("checkAnswer");
+
+const nextQuestionButton =
+    document.getElementById("nextQuestion");
+
+const interviewResult =
+    document.getElementById("interviewResult");
+
+
+function showQuestion() {
+
+    if (!questionElement) return;
+
+    questionElement.textContent =
+        interviewQuestions[currentQuestion].question;
+
+    answerElement.value = "";
+
+    interviewResult.style.display = "none";
+}
+
+
+if (checkAnswerButton) {
+
+    checkAnswerButton.addEventListener("click", function () {
+
+        const answer =
+            answerElement.value.trim().toLowerCase();
+
+        if (!answer) {
+            alert("Please write your answer first.");
+            return;
+        }
+
+        const keywords =
+            interviewQuestions[currentQuestion].keywords;
+
+        let matched = 0;
+
+        keywords.forEach(function (keyword) {
+
+            if (answer.includes(keyword)) {
+                matched++;
+            }
+
+        });
+
+        const percentage =
+            Math.round((matched / keywords.length) * 100);
+
+        if (percentage >= 60) {
+            interviewScore++;
+        }
+
+        interviewResult.innerHTML = `
+            <h3>📊 Answer Result</h3>
+
+            <p>
+                Your answer matched
+                <strong>${percentage}%</strong>
+                of the important concepts.
+            </p>
+
+            <p>
+                ${percentage >= 60
+                    ? "✅ Good answer! Keep improving."
+                    : "💡 Try to include more important concepts."
+                }
+            </p>
+        `;
+
+        interviewResult.style.display = "block";
+    });
+}
+
+
+if (nextQuestionButton) {
+
+    nextQuestionButton.addEventListener("click", function () {
+
+        currentQuestion++;
+
+        if (currentQuestion >= interviewQuestions.length) {
+
+            questionElement.textContent =
+                "🎉 Interview Completed!";
+
+            answerElement.style.display = "none";
+            checkAnswerButton.style.display = "none";
+            nextQuestionButton.style.display = "none";
+
+            interviewResult.innerHTML = `
+                <h3>🏆 Final Score</h3>
+
+                <p>
+                    You answered
+                    <strong>${interviewScore}</strong>
+                    out of
+                    <strong>${interviewQuestions.length}</strong>
+                    questions well.
+                </p>
+
+                <p>
+                    🚀 Keep practicing to improve your interview skills!
+                </p>
+            `;
+
+            interviewResult.style.display = "block";
+
+            return;
+        }
+
+        showQuestion();
+    });
+}
+
+
+// Start first question
+showQuestion();
+
     console.log(
         "CareerAI loaded successfully 🚀"
     );
