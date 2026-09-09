@@ -288,6 +288,110 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+// =========================
+// AI CAREER ADVISOR
+// =========================
+
+const careerButton = document.getElementById("getCareer");
+const careerResult = document.getElementById("careerResult");
+
+if (careerButton && careerResult) {
+
+    careerButton.addEventListener("click", function () {
+
+        const interest = document
+            .getElementById("careerInterest")
+            .value
+            .trim()
+            .toLowerCase();
+
+        const skills = document
+            .getElementById("careerSkills")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+        if (!interest || !skills) {
+            alert("Please enter your interest and skills.");
+            return;
+        }
+
+
+        let career = "";
+        let roadmap = "";
+
+
+        if (
+            interest.includes("web") ||
+            skills.includes("html") ||
+            skills.includes("css") ||
+            skills.includes("javascript")
+        ) {
+            career = "🌐 Full Stack Web Developer";
+            roadmap =
+                "HTML → CSS → JavaScript → React → Node.js → Database → GitHub";
+        }
+
+        else if (
+            interest.includes("data") ||
+            skills.includes("python") ||
+            skills.includes("sql")
+        ) {
+            career = "📊 Data Analyst / Data Professional";
+            roadmap =
+                "Python → SQL → Statistics → Pandas → Data Visualization → Projects";
+        }
+
+        else if (
+            interest.includes("app") ||
+            skills.includes("java") ||
+            skills.includes("android")
+        ) {
+            career = "📱 Android Developer";
+            roadmap =
+                "Java/Kotlin → Android Studio → UI → APIs → Database → Projects";
+        }
+
+        else if (
+            interest.includes("design") ||
+            skills.includes("figma") ||
+            skills.includes("ui")
+        ) {
+            career = "🎨 UI/UX Designer";
+            roadmap =
+                "UI Basics → Figma → UX Research → Wireframes → Prototypes → Portfolio";
+        }
+
+        else {
+            career = "💻 Software Developer";
+            roadmap =
+                "Programming Basics → OOP → Data Structures → GitHub → Projects → Interview Prep";
+        }
+
+
+        careerResult.innerHTML = `
+            <h3>🎯 Recommended Career</h3>
+
+            <h2>${career}</h2>
+
+            <h3>🗺️ Suggested Roadmap</h3>
+
+            <p>${roadmap}</p>
+
+            <p>
+                🚀 Keep building projects and improving your skills!
+            </p>
+        `;
+
+        careerResult.style.display = "block";
+
+        careerResult.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+}
 
     console.log(
         "CareerAI loaded successfully 🚀"
